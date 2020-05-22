@@ -1,0 +1,86 @@
+.quotes {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 3em;
+
+    @include media(xmedium) {
+        width: 80%;
+    }
+
+    .image {
+        background-color: $color_main_bg;
+        position: absolute;
+        top: -1.2em;
+        left: 1em;
+        z-index: -1;
+
+        @include media(xmedium) {
+            left: -0.3em;
+        }
+
+        img {
+            width: 50%;
+
+            @include media(xmedium) {
+                width: 100%;
+            }
+        }
+    }
+
+    .quote-list {
+        background-color: $color_main_bg;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1.5em;
+
+        @include media(xmedium) {
+            grid-template-columns: repeat(3,1fr);
+            column-gap: 2em;
+        }
+
+        .quote {
+            background-color: $color_testmonials;
+            padding: 2em 1.5em;
+            border-radius: .5em;
+            line-height: 1.6;
+            font-family: Opensans_Regular;
+            font-size: 0.8em;
+
+            @include media(xmedium) {
+                font-size: 0.58em;
+                padding: 2em 1.8em;
+            }
+
+            .reviewer {
+               display: grid;
+               grid-template-columns: 10% 1fr;
+               grid-template-areas: "image name"
+                                    "image title";
+               column-gap: 1em;
+               margin-top: 1.5em;
+               font-size: 0.9em;
+               
+               img {
+                   grid-area: image;
+                   border-radius: 3em;
+                   width: 100%;
+               }
+
+               p.name {
+                   grid-area: name;
+                   letter-spacing: 0.08em;
+                   font-family: Opensans_Bold;
+                   align-self: start;
+               }
+
+               p.title {
+                   grid-area: title;
+                   font-size: 0.8em;
+                   letter-spacing: 0.05em;
+                   align-self: end;
+               }
+            }
+        }
+    }
+}

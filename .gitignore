@@ -1,0 +1,6 @@
+.DS_Store
+design/
+*master/
+index1.html
+*.md
+!README.md

@@ -1,0 +1,128 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+
+    .image {
+        background-color: $color_main_bg;
+        height: 100%;
+        padding: 1em 0;
+
+        @include media(medium) {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        a {
+            img {
+                padding: 1em 0 0 0;
+            }
+    
+            @include media(medium) {
+                width: 60%;
+            }
+        }         
+    }
+
+    .menu {
+        background-color: $color_main_bg;
+        font-size: 1.5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 2500;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0);
+        transition: opacity 0.5s ease-out;
+
+        @include media(medium) {
+            background-color: $color_main_bg;
+            position: static;
+            height: auto;
+            font-size: 1.1rem;
+            opacity: 1;
+            pointer-events: all;
+            transform: scale(1);
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        @include media(large) {
+            font-size: 1.05rem;
+        }
+
+        &.menu-open {
+            display: flex;
+            opacity: 0.8;
+            transform: scale(1);
+            pointer-events: all;
+            font-family: Raleway_Bold;
+        }
+
+        .menu-item {
+            max-height: 100%;
+            .menu-link {
+                display: block;
+                text-decoration: none;
+                text-transform: capitalize;
+                text-align: center;
+                color: $color_white;
+                padding: 1.2em 0.5em;
+            }
+            
+        }
+
+        @include media(medium) {
+            .menu-item {
+                padding: 0;
+            }
+        }
+
+        .menu-item:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .hamburger {
+        background-color: $color_main_bg;
+        height: 100%;
+        display: block;
+        text-align: right;
+        position: relative;
+        z-index: 2999;
+        padding: 1em;
+
+        a {
+            color: $color_white;
+            font-size: 3rem;
+            text-decoration: none;
+        }
+
+        &.menu-open {
+            & .fa-times {
+                display: block;
+            }
+
+            & .fa-bars {
+                display: none;
+            }
+        }
+
+        .fa-times {
+            display: none;
+        }
+
+        @include media(medium) {
+            display: none;
+        }
+    }
+}
+

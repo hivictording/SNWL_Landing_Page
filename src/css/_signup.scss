@@ -1,0 +1,41 @@
+.signup {
+    background-color: $color_intro_signup;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2em 2.5em;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.5em;
+
+    p {
+        font-size: 1.18em;
+        margin-bottom: 1em;
+    }
+
+    .info {
+        input,button {
+            width: 100%;
+            padding: 1.5em 1em;
+            border-radius: 3em;
+            font-size: 1em;
+        }
+
+        input {
+            text-indent: 1.5em;
+        }
+
+        .button {
+            margin-top: 2em;
+
+            button {
+                cursor: pointer;
+                background-image: linear-gradient(90deg,$color_accent_cyan,$color_accent_blue);
+                text-transform: capitalize;
+                font-family: Opensans_Regular;
+                color: $color_white;
+            }
+        }
+    }
+    
+}
