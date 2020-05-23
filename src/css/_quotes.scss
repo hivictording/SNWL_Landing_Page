@@ -4,29 +4,49 @@
     margin: 0 auto;
     padding-bottom: 3em;
 
+    &::before {
+        // content: url(../images/bg-quotes.png);
+        position: absolute;
+        // transform: translate(25%,-60%) scale(0.6);
+        z-index: -1;
+        content: "";
+        background-image: url(../images/bg-quotes.png);
+        background-size: 60%;
+        background-repeat: no-repeat;
+        transform: translate(25%,-50%);
+        height: 2.5em;
+        width:  2.5em;
+        
+
+        @include media(xmedium) {
+            // transform: translate(35%,-60%) scale(1);
+            background-size: 80%;
+        }
+    }
+
     @include media(xmedium) {
         width: 80%;
     }
 
-    .image {
-        background-color: $color_main_bg;
-        position: absolute;
-        top: -1.2em;
-        left: 1em;
-        z-index: -1;
+    // .image {
+    //     background-color: $color_main_bg;
+    //     position: absolute;
+    //     top: -1.2em;
+    //     left: 1em;
+    //     z-index: -1;
 
-        @include media(xmedium) {
-            left: -0.3em;
-        }
+    //     @include media(xmedium) {
+    //         left: -0.3em;
+    //     }
 
-        img {
-            width: 50%;
+    //     img {
+    //         width: 50%;
 
-            @include media(xmedium) {
-                width: 100%;
-            }
-        }
-    }
+    //         @include media(xmedium) {
+    //             width: 100%;
+    //         }
+    //     }
+    // }
 
     .quote-list {
         background-color: $color_main_bg;
